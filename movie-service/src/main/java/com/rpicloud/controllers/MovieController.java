@@ -3,6 +3,7 @@ package com.rpicloud.controllers;
 import com.rpicloud.models.Movie;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,6 +24,7 @@ public class MovieController {
         populateMovies();
     }
 
+    @CrossOrigin(origins = "http://localhost:8000")
     @RequestMapping("/movies")
     public ResponseEntity<List<Movie>> movies() {
         return new ResponseEntity<>(defaultMovies, HttpStatus.OK);
