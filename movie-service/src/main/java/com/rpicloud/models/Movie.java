@@ -7,13 +7,15 @@ public class Movie {
     private String title;
     private String pictureUrl;
     private String actors;
+    private int number;
     private int year;
 
-    public Movie(String title, String pictureUrl, String actors, int year) {
+    public Movie(String title, String pictureUrl, String actors, int year, int number) {
         this.title = title;
         this.pictureUrl = pictureUrl;
         this.actors = actors;
         this.year = year;
+        this.number = number;
     }
 
     public String getTitle() {
@@ -22,6 +24,14 @@ public class Movie {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
     }
 
     public String getPictureUrl() {
