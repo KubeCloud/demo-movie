@@ -31,8 +31,8 @@ public class MovieController {
         populateMovies();
     }
 
-    @RequestMapping("/movies")
-    public ResponseEntity<List<Movie>> movies() {
+
+    @CrossOrigin(origins = "http://localhost:8000")
     @HystrixCommand(fallbackMethod = "moviesFallback", commandKey = "moviesFallback")
     @RequestMapping("/movies/{userId}")
     public ResponseEntity<List<Movie>> movies(@PathVariable int userId){
@@ -51,15 +51,13 @@ public class MovieController {
         else if (preference.equals("kids")) {
             return new ResponseEntity<>(kidsMovies, HttpStatus.OK);
         }
+
         return moviesFallback(userId);
     }
 
 
-    public ResponseEntity<List<Movie>> moviesFallback(@PathVariable int userId) {
+    public ResponseEntity<List<Movie>> moviesFallback(@PathVariable int userId){
         System.out.println("moviesFallback invoked");
-    @CrossOrigin(origins = "http://localhost:8000")
-    @RequestMapping("/movies")
-    public ResponseEntity<List<Movie>> movies() {
         return new ResponseEntity<>(defaultMovies, HttpStatus.OK);
     }
 
