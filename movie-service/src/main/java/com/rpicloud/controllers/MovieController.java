@@ -1,6 +1,7 @@
 package com.rpicloud.controllers;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.rpicloud.IPreferenceService;
 import com.rpicloud.models.Movie;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -36,8 +37,21 @@ public class MovieController {
         System.out.println("movies invoked");
 
         // Try user preference
+//        IPreferenceService preferenceService = Feign.builder()
+//                .decoder(new JacksonDecoder())
+//                .target(IPreferenceService.class, "http://preference-service:8080");
+//
+//        List<Movie> resources = preferenceService.resources();
+//
+//        return new ResponseEntity<List<Movie>>(resources, HttpStatus.OK);
+
+
         return new ResponseEntity<>(defaultMovies, HttpStatus.OK);
     }
+
+
+
+
 
     public ResponseEntity<List<Movie>> moviesFallback(@PathVariable int userId) {
         System.out.println("moviesFallback invoked");
