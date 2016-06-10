@@ -3,6 +3,7 @@ package com.rpicloud.controllers;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.rpicloud.IPreferenceService;
 import com.rpicloud.models.Movie;
+import com.rpicloud.models.Preference;
 import feign.Feign;
 import feign.jackson.JacksonDecoder;
 import org.springframework.http.HttpStatus;
@@ -43,12 +44,12 @@ public class MovieController {
                 .decoder(new JacksonDecoder())
                 .target(IPreferenceService.class, "http://localhost:8002");
 //                .target(IPreferenceService.class, "http://preference-service:8080");
+        Preference preference = preferenceService.preferences(userId);
 
-        String preference = preferenceService.preferences(userId);
-        if (preference.equals("action")){
+        if (preference.getName().equals("action")){
             return new ResponseEntity<>(actionMovies, HttpStatus.OK);
         }
-        else if (preference.equals("kids")) {
+        else if (preference.getName().equals("kids")) {
             return new ResponseEntity<>(kidsMovies, HttpStatus.OK);
         }
 

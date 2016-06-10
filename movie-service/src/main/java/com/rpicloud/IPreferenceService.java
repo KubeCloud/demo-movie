@@ -2,6 +2,7 @@ package com.rpicloud;
 
 import java.util.List;
 
+import com.rpicloud.models.Preference;
 import feign.Param;
 import feign.RequestLine;
 
@@ -10,5 +11,5 @@ import feign.RequestLine;
  */
 public interface IPreferenceService {
     @RequestLine("GET /preferences/{userId}")
-    String preferences(@Param("userId") int userId);
+    Preference preferences(@Param("userId") int userId);
 }
