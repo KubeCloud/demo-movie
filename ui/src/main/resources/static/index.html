@@ -5,13 +5,12 @@
     <title>Hello world</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
-    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
 </head>
 <body>
 
-<nav class="navbar navbar-default green darken-1">
+<nav class="navbar navbar-default">
     <div class="container">
         <div class="navbar-header">
             <a class="navbar-brand" href="/" >KubeCloud Movie Demo</a>
@@ -23,34 +22,24 @@
 </nav>
 
 
-<div class="container">
-    <h4>Please choose a profile:</h4>
+<div class="container center-align">
+    <h5>Please choose a profile</h5>
     <div class="row">
-        <div class="col s3">
-            <div class="card">
-
+        <div class="col s3 offset-s3">
+            <div class="card" id="card-kni">
                 <div class="card-image">
                     <img src="images/kni.png">
                     <span class="card-title">Kasper Nissen</span>
 
                 </div>
-                <div class="card-content">
-                    <p>Have a son that watches cartoons.</p>
-                    <button id="btn-kasper" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></button>
-
-                </div>
             </div>
         </div>
         <div class="col s3">
-            <div class="card">
+            <div class="card" id="card-mje">
                 <div class="card-image">
                     <img src="images/mje.jpg">
                     <span class="card-title">Martin Jensen</span>
 
-                </div>
-                <div class="card-content">
-                    <p>Prefer action movies.</p>
-                    <button id="btn-martin" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></button>
                 </div>
             </div>
         </div>
@@ -58,7 +47,7 @@
 
     <div id="movie-container" class="hide">
         <div class="row">
-            <h5 id="title" class="center-align">Movies</h5>
+            <h5 id="title" class="center-align"><strong>Movies</strong></h5>
         </div>
         <div class="row">
             <div id="movies"></div>
