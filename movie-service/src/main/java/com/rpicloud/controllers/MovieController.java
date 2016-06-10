@@ -1,8 +1,11 @@
 package com.rpicloud.controllers;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.rpicloud.models.Movie;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,6 +18,7 @@ import java.util.List;
  */
 
 @RestController
+@Component
 public class MovieController {
     private ArrayList<Movie> defaultMovies = new ArrayList<Movie>();
     private ArrayList<Movie> actionMovies = new ArrayList<Movie>();
@@ -24,11 +28,26 @@ public class MovieController {
         populateMovies();
     }
 
+    @RequestMapping("/movies")
+    public ResponseEntity<List<Movie>> movies() {
+    @HystrixCommand(fallbackMethod = "moviesFallback", commandKey = "moviesFallback")
+    @RequestMapping("/movies/{userId}")
+    public ResponseEntity<List<Movie>> movies(@PathVariable int userId) throws InterruptedException {
+        System.out.println("movies invoked");
+
+        // Try user preference
+        return new ResponseEntity<>(defaultMovies, HttpStatus.OK);
+    }
+
+    public ResponseEntity<List<Movie>> moviesFallback(@PathVariable int userId) {
+        System.out.println("moviesFallback invoked");
     @CrossOrigin(origins = "http://localhost:8000")
     @RequestMapping("/movies")
     public ResponseEntity<List<Movie>> movies() {
         return new ResponseEntity<>(defaultMovies, HttpStatus.OK);
     }
+
+
 
 
     private void populateMovies() {
