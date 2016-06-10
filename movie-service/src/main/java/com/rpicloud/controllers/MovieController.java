@@ -3,6 +3,8 @@ package com.rpicloud.controllers;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.rpicloud.IPreferenceService;
 import com.rpicloud.models.Movie;
+import feign.Feign;
+import feign.jackson.JacksonDecoder;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
@@ -33,24 +35,24 @@ public class MovieController {
     public ResponseEntity<List<Movie>> movies() {
     @HystrixCommand(fallbackMethod = "moviesFallback", commandKey = "moviesFallback")
     @RequestMapping("/movies/{userId}")
-    public ResponseEntity<List<Movie>> movies(@PathVariable int userId) throws InterruptedException {
+    public ResponseEntity<List<Movie>> movies(@PathVariable int userId){
         System.out.println("movies invoked");
 
         // Try user preference
-//        IPreferenceService preferenceService = Feign.builder()
-//                .decoder(new JacksonDecoder())
+        IPreferenceService preferenceService = Feign.builder()
+                .decoder(new JacksonDecoder())
+                .target(IPreferenceService.class, "http://localhost:8002");
 //                .target(IPreferenceService.class, "http://preference-service:8080");
-//
-//        List<Movie> resources = preferenceService.resources();
-//
-//        return new ResponseEntity<List<Movie>>(resources, HttpStatus.OK);
 
-
-        return new ResponseEntity<>(defaultMovies, HttpStatus.OK);
+        String preference = preferenceService.preferences(userId);
+        if (preference.equals("action")){
+            return new ResponseEntity<>(actionMovies, HttpStatus.OK);
+        }
+        else if (preference.equals("kids")) {
+            return new ResponseEntity<>(kidsMovies, HttpStatus.OK);
+        }
+        return moviesFallback(userId);
     }
-
-
-
 
 
     public ResponseEntity<List<Movie>> moviesFallback(@PathVariable int userId) {
