@@ -33,7 +33,7 @@ public class MovieController {
     }
 
 
-    @CrossOrigin(origins = "http://localhost:8000")
+    @CrossOrigin(origins = "http://192.168.1.51")
     @HystrixCommand(fallbackMethod = "moviesFallback", commandKey = "moviesFallback")
     @RequestMapping("/movies/{userId}")
     public ResponseEntity<List<Movie>> movies(@PathVariable int userId){
@@ -42,8 +42,8 @@ public class MovieController {
         // Try user preference
         IPreferenceService preferenceService = Feign.builder()
                 .decoder(new JacksonDecoder())
-                .target(IPreferenceService.class, "http://localhost:8002");
-//                .target(IPreferenceService.class, "http://preference-service:8080");
+//                .target(IPreferenceService.class, "http://localhost:8002");
+                .target(IPreferenceService.class, "http://preference-service:8080");
         Preference preference = preferenceService.preferences(userId);
 
         if (preference.getName().equals("action")){
