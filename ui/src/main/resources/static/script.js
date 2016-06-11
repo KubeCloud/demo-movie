@@ -5,7 +5,7 @@
 function getMovies(id){
     $('#movie-container').removeClass('hide');
 
-    $.get("http://localhost:8001/movies/"+id, function( data ) {
+    $.get("http://192.168.1.51:8001/movies/"+id, function( data ) {
         $("#movies").empty();
         data.forEach(function(element){
             $("#movies").append('<div class="col s3"><div class="card"><div class="card-image"><img src="'+element.pictureUrl+'"><span class="card-title">'+element.title+'</span></div></div></div>');

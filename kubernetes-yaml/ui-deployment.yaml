@@ -1,0 +1,29 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    run: ui
+    visualize: "true"
+  name: ui-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: ui
+      visualize: "true"
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: ui
+        visualize: "true"
+    spec:
+      containers:
+      - image: kubecloud/demo-movie-ui:v1
+        name: ui-deployment
+        ports:
+        - containerPort: 8080
+        resources: {}
+status: {}

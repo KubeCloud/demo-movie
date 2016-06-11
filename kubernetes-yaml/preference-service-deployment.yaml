@@ -1,0 +1,29 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    run: preference-service
+    visualize: "true"
+  name: preference-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: preference-service
+      visualize: "true"
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: preference-service
+        visualize: "true"
+    spec:
+      containers:
+      - image: kubecloud/demo-movie-preference-service:v1
+        name: preference-service
+        ports:
+        - containerPort: 8080
+        resources: {}
+status: {}

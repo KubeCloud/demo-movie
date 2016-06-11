@@ -1,0 +1,29 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    run: movie-service
+    visualize: "true"
+  name: movie-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: movie-service
+      visualize: "true"
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: movie-service
+        visualize: "true"
+    spec:
+      containers:
+      - image: kubecloud/demo-movie-movie-service:v1
+        name: movie-service
+        ports:
+        - containerPort: 8080
+        resources: {}
+status: {}
