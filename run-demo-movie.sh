@@ -12,3 +12,8 @@ kubectl create -f kubernetes-yaml/movie-service-svc.yaml
 sleep 20s
 kubectl create -f kubernetes-yaml/ui-deployment.yaml
 kubectl create -f kubernetes-yaml/ui-svc.yaml
+
+sleep 40s
+curl http://192.168.1.51:8001/movies/1
+curl http://192.168.1.51:8001/movies/2
+curl http://192.168.1.51
