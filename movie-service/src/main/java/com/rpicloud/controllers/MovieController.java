@@ -29,6 +29,7 @@ public class MovieController {
     private ArrayList<Movie> actionMovies = new ArrayList<Movie>();
     private ArrayList<Movie> kidsMovies = new ArrayList<Movie>();
 
+
     public MovieController() {
 
         populateMovies();
@@ -70,39 +71,41 @@ public class MovieController {
 
 
     private void populateMovies() {
+//        String host = "http://192.168.1.51:8001/";
+        String host = "http://192.168.1.51:8001/images/";
         // Default movies
-        defaultMovies.add(new Movie("The Godfather","http://ia.media-imdb.com/images/M/MV5BMjEyMjcyNDI4MF5BMl5BanBnXkFtZTcwMDA5Mzg3OA@@._V1._SX140_CR0,0,140,209_.jpg", "Marlon Brando, Al Pacino, James Caan, Diane Keaton", 1972, 1));
-        defaultMovies.add(new Movie("The Shawshank Redemption","http://ia.media-imdb.com/images/M/MV5BODU4MjU4NjIwNl5BMl5BanBnXkFtZTgwMDU2MjEyMDE@._V1._SY209_CR0,0,140,209_.jpg", "Tim Robbins, Morgan Freeman, Bob Gunton, William Sadler", 1994, 2));
-        defaultMovies.add(new Movie("Schindler's List","http://ia.media-imdb.com/images/M/MV5BMzMwMTM4MDU2N15BMl5BanBnXkFtZTgwMzQ0MjMxMDE@._V1._SX140_CR0,0,140,209_.jpg", "Liam Neeson, Ralph Fiennes, Ben Kingsley, Caroline Goodall", 1993, 3));
-        defaultMovies.add(new Movie("Raging Bull ","http://ia.media-imdb.com/images/M/MV5BMjIxOTg3OTc5MF5BMl5BanBnXkFtZTcwNzkwNjMwNA@@._V1._SX140_CR0,0,140,209_.jpg", "Robert De Niro, Cathy Moriarty, Joe Pesci, Frank Vincent", 1980, 4));
-        defaultMovies.add(new Movie("Casablanca","http://ia.media-imdb.com/images/M/MV5BMjQwNDYyNTk2N15BMl5BanBnXkFtZTgwMjQ0OTMyMjE@._V1._SX140_CR0,0,140,209_.jpg", "Humphrey Bogart, Ingrid Bergman, Paul Henreid, Claude Rains", 1942, 5));
-        defaultMovies.add(new Movie("One Flew Over the Cuckoo's Nest","http://ia.media-imdb.com/images/M/MV5BMTk5OTA4NTc0NF5BMl5BanBnXkFtZTcwNzI5Mzg3OA@@._V1._SY209_CR8,0,140,209_.jpg", "Jack Nicholson, Louise Fletcher, Michael Berryman, Peter Brocco", 1975, 6));
-        defaultMovies.add(new Movie("Gone with the Wind","http://ia.media-imdb.com/images/M/MV5BNDUwMjAxNTU1MF5BMl5BanBnXkFtZTgwMzg4NzMxMDE@._V1._SX140_CR0,0,140,209_.jpg", "Clark Gable, Vivien Leigh, Thomas Mitchell, Barbara O'Neil", 1939, 7));
-        defaultMovies.add(new Movie("Citizen Kane","http://ia.media-imdb.com/images/M/MV5BMTQ2Mjc1MDQwMl5BMl5BanBnXkFtZTcwNzUyOTUyMg@@._V1._SY209_CR0,0,140,209_.jpg", "Orson Welles, Joseph Cotten, Dorothy Comingore, Agnes Moorehead", 1941, 8));
-        defaultMovies.add(new Movie("The Wizard of Oz ","http://ia.media-imdb.com/images/M/MV5BMTU0MTA2OTIwNF5BMl5BanBnXkFtZTcwMzA0Njk3OA@@._V1._SY209_CR7,0,140,209_.jpg", "Judy Garland, Frank Morgan, Ray Bolger, Bert Lahr", 1939, 9));
-        defaultMovies.add(new Movie("Lawrence of Arabia","http://ia.media-imdb.com/images/M/MV5BMzAwMjM4NzA2OV5BMl5BanBnXkFtZTcwMDI0NzAwMQ@@._V1._SY209_CR1,0,140,209_.jpg", "Peter O'Toole, Alec Guinness, Anthony Quinn, Jack Hawkins", 1962, 10));
+        defaultMovies.add(new Movie("The Godfather", host + "default1.jpg", "Marlon Brando, Al Pacino, James Caan, Diane Keaton", 1972, 1));
+        defaultMovies.add(new Movie("The Shawshank Redemption", host + "default2.jpg", "Tim Robbins, Morgan Freeman, Bob Gunton, William Sadler", 1994, 2));
+        defaultMovies.add(new Movie("Schindler's List", host + "default3.jpg", "Liam Neeson, Ralph Fiennes, Ben Kingsley, Caroline Goodall", 1993, 3));
+        defaultMovies.add(new Movie("Raging Bull ", host + "default4.jpg", "Robert De Niro, Cathy Moriarty, Joe Pesci, Frank Vincent", 1980, 4));
+        defaultMovies.add(new Movie("Casablanca", host + "default5.jpg", "Humphrey Bogart, Ingrid Bergman, Paul Henreid, Claude Rains", 1942, 5));
+        defaultMovies.add(new Movie("One Flew Over the Cuckoo's Nest", host + "default6.jpg", "Jack Nicholson, Louise Fletcher, Michael Berryman, Peter Brocco", 1975, 6));
+        defaultMovies.add(new Movie("Gone with the Wind", host + "default7.jpg", "Clark Gable, Vivien Leigh, Thomas Mitchell, Barbara O'Neil", 1939, 7));
+        defaultMovies.add(new Movie("Citizen Kane", host + "default8.jpg", "Orson Welles, Joseph Cotten, Dorothy Comingore, Agnes Moorehead", 1941, 8));
+        defaultMovies.add(new Movie("The Wizard of Oz ", host + "default9.jpg", "Judy Garland, Frank Morgan, Ray Bolger, Bert Lahr", 1939, 9));
+        defaultMovies.add(new Movie("Lawrence of Arabia", host + "default1.jpg", "Peter O'Toole, Alec Guinness, Anthony Quinn, Jack Hawkins", 1962, 10));
 
 //        kidsMovies.add(new Movie("Ratatouille","http://ia.media-imdb.com/images/M/MV5BMTMzODU0NTkxMF5BMl5BanBnXkFtZTcwMjQ4MzMzMw@@._V1_SY1000_CR0,0,674,1000_AL_.jpg", "Marlon Brando, Al Pacino, James Caan, Diane Keaton", 2007, 1));
-        kidsMovies.add(new Movie("The Incredibles","kids1.jpg", "Tim Robbins, Morgan Freeman, Bob Gunton, William Sadler", 2004, 2));
-        kidsMovies.add(new Movie("Shrek","kids2.jpg", "Liam Neeson, Ralph Fiennes, Ben Kingsley, Caroline Goodall", 1993, 3));
-        kidsMovies.add(new Movie("The Lion King","kids2.jpg", "Robert De Niro, Cathy Moriarty, Joe Pesci, Frank Vincent", 1980, 4));
-        kidsMovies.add(new Movie("Finding Nemo","kids4.jpg", "Humphrey Bogart, Ingrid Bergman, Paul Henreid, Claude Rains", 1942, 5));
-        kidsMovies.add(new Movie("Monsters, Inc.","kids5.jpg", "Jack Nicholson, Louise Fletcher, Michael Berryman, Peter Brocco", 1975, 6));
-        kidsMovies.add(new Movie("Wall-E","kids6.jpg", "Clark Gable, Vivien Leigh, Thomas Mitchell, Barbara O'Neil", 1939, 7));
-        kidsMovies.add(new Movie("Up","kids7.jpg", "Orson Welles, Joseph Cotten, Dorothy Comingore, Agnes Moorehead", 1941, 8));
-        kidsMovies.add(new Movie("The Jungle Book","kids8.jpg", "Judy Garland, Frank Morgan, Ray Bolger, Bert Lahr", 1939, 9));
-        kidsMovies.add(new Movie("The Angry Birds Movie","kids9.jpg", "Peter O'Toole, Alec Guinness, Anthony Quinn, Jack Hawkins", 1962, 10));
+        kidsMovies.add(new Movie("The Incredibles",host + "kids1.jpg", "Tim Robbins, Morgan Freeman, Bob Gunton, William Sadler", 2004, 2));
+        kidsMovies.add(new Movie("Shrek", host + "kids2.jpg", "Liam Neeson, Ralph Fiennes, Ben Kingsley, Caroline Goodall", 1993, 3));
+        kidsMovies.add(new Movie("The Lion King", host + "kids3.jpg", "Robert De Niro, Cathy Moriarty, Joe Pesci, Frank Vincent", 1980, 4));
+        kidsMovies.add(new Movie("Finding Nemo", host + "kids4.jpg", "Humphrey Bogart, Ingrid Bergman, Paul Henreid, Claude Rains", 1942, 5));
+        kidsMovies.add(new Movie("Monsters, Inc.", host + "kids5.jpg", "Jack Nicholson, Louise Fletcher, Michael Berryman, Peter Brocco", 1975, 6));
+        kidsMovies.add(new Movie("Wall-E", host + "kids6.jpg", "Clark Gable, Vivien Leigh, Thomas Mitchell, Barbara O'Neil", 1939, 7));
+        kidsMovies.add(new Movie("Up", host + "kids7.jpg", "Orson Welles, Joseph Cotten, Dorothy Comingore, Agnes Moorehead", 1941, 8));
+        kidsMovies.add(new Movie("The Jungle Book", host + "kids8.jpg", "Judy Garland, Frank Morgan, Ray Bolger, Bert Lahr", 1939, 9));
+        kidsMovies.add(new Movie("The Angry Birds Movie", host + "kids9.jpg", "Peter O'Toole, Alec Guinness, Anthony Quinn, Jack Hawkins", 1962, 10));
 
-        actionMovies.add(new Movie("The Dark Knight","http://ia.media-imdb.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SY1000_CR0,0,675,1000_AL_.jpg", "Marlon Brando, Al Pacino, James Caan, Diane Keaton", 1972, 1));
-        actionMovies.add(new Movie("Heat","http://ia.media-imdb.com/images/M/MV5BMTM1NDc4ODkxNV5BMl5BanBnXkFtZTcwNTI4ODE3MQ@@._V1_.jpg", "Tim Robbins, Morgan Freeman, Bob Gunton, William Sadler", 1994, 2));
-        actionMovies.add(new Movie("Inception","http://ia.media-imdb.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SY1000_CR0,0,675,1000_AL_.jpg", "Liam Neeson, Ralph Fiennes, Ben Kingsley, Caroline Goodall", 1993, 3));
-        actionMovies.add(new Movie("Kill Bill: Vol 1.","http://ia.media-imdb.com/images/M/MV5BMTU1NDg1Mzg4M15BMl5BanBnXkFtZTYwMDExOTc3._V1_.jpg", "Robert De Niro, Cathy Moriarty, Joe Pesci, Frank Vincent", 1980, 4));
-        actionMovies.add(new Movie("Gladiator","http://ia.media-imdb.com/images/M/MV5BMTgwMzQzNTQ1Ml5BMl5BanBnXkFtZTgwMDY2NTYxMTE@._V1_SY1000_CR0,0,675,1000_AL_.jpg", "Humphrey Bogart, Ingrid Bergman, Paul Henreid, Claude Rains", 1942, 5));
-        actionMovies.add(new Movie("Saving Private Ryan","http://ia.media-imdb.com/images/M/MV5BNjczODkxNTAxN15BMl5BanBnXkFtZTcwMTcwNjUxMw@@._V1_.jpg", "Jack Nicholson, Louise Fletcher, Michael Berryman, Peter Brocco", 1975, 6));
-        actionMovies.add(new Movie("Terminator 2 - Judgement Day","http://ia.media-imdb.com/images/M/MV5BMTI4MDAwMDY3N15BMl5BanBnXkFtZTcwODIwMzMzMQ@@._V1._CR46,1,342,473_.jpg", "Clark Gable, Vivien Leigh, Thomas Mitchell, Barbara O'Neil", 1939, 7));
-        actionMovies.add(new Movie("The Bourne Ultimatum","http://ia.media-imdb.com/images/M/MV5BMTgzNjMwOTM3N15BMl5BanBnXkFtZTcwMzA5MDY0MQ@@._V1_.jpg", "Orson Welles, Joseph Cotten, Dorothy Comingore, Agnes Moorehead", 1941, 8));
-        actionMovies.add(new Movie("The Dark Knoght Rises","http://ia.media-imdb.com/images/M/MV5BMTk4ODQzNDY3Ml5BMl5BanBnXkFtZTcwODA0NTM4Nw@@._V1_.jpg", "Judy Garland, Frank Morgan, Ray Bolger, Bert Lahr", 1939, 9));
-        actionMovies.add(new Movie("The Matrix","http://ia.media-imdb.com/images/M/MV5BMTkxNDYxOTA4M15BMl5BanBnXkFtZTgwNTk0NzQxMTE@._V1_.jpg", "Peter O'Toole, Alec Guinness, Anthony Quinn, Jack Hawkins", 1962, 10));
+        actionMovies.add(new Movie("The Dark Knight", host + "action1", "Marlon Brando, Al Pacino, James Caan, Diane Keaton", 1972, 1));
+        actionMovies.add(new Movie("Heat",  host + "action2", "Tim Robbins, Morgan Freeman, Bob Gunton, William Sadler", 1994, 2));
+        actionMovies.add(new Movie("Inception", host + "action3", "Liam Neeson, Ralph Fiennes, Ben Kingsley, Caroline Goodall", 1993, 3));
+        actionMovies.add(new Movie("Kill Bill: Vol 1.", host + "action4", "Robert De Niro, Cathy Moriarty, Joe Pesci, Frank Vincent", 1980, 4));
+        actionMovies.add(new Movie("Gladiator", host + "action5", "Humphrey Bogart, Ingrid Bergman, Paul Henreid, Claude Rains", 1942, 5));
+        actionMovies.add(new Movie("Saving Private Ryan", host + "action6", "Jack Nicholson, Louise Fletcher, Michael Berryman, Peter Brocco", 1975, 6));
+        actionMovies.add(new Movie("Terminator 2 - Judgement Day", host + "action7", "Clark Gable, Vivien Leigh, Thomas Mitchell, Barbara O'Neil", 1939, 7));
+        actionMovies.add(new Movie("The Bourne Ultimatum", host + "action8", "Orson Welles, Joseph Cotten, Dorothy Comingore, Agnes Moorehead", 1941, 8));
+        actionMovies.add(new Movie("The Dark Knoght Rises",host + "action9", "Judy Garland, Frank Morgan, Ray Bolger, Bert Lahr", 1939, 9));
+        actionMovies.add(new Movie("The Matrix",host + "action10", "Peter O'Toole, Alec Guinness, Anthony Quinn, Jack Hawkins", 1962, 10));
 
     }
 }
