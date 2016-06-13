@@ -96,16 +96,16 @@ public class MovieController {
         kidsMovies.add(new Movie("The Jungle Book", host + "kids8.jpg", "Judy Garland, Frank Morgan, Ray Bolger, Bert Lahr", 1939, 9));
         kidsMovies.add(new Movie("The Angry Birds Movie", host + "kids9.jpg", "Peter O'Toole, Alec Guinness, Anthony Quinn, Jack Hawkins", 1962, 10));
 
-        actionMovies.add(new Movie("The Dark Knight", host + "action1", "Marlon Brando, Al Pacino, James Caan, Diane Keaton", 1972, 1));
-        actionMovies.add(new Movie("Heat",  host + "action2", "Tim Robbins, Morgan Freeman, Bob Gunton, William Sadler", 1994, 2));
-        actionMovies.add(new Movie("Inception", host + "action3", "Liam Neeson, Ralph Fiennes, Ben Kingsley, Caroline Goodall", 1993, 3));
-        actionMovies.add(new Movie("Kill Bill: Vol 1.", host + "action4", "Robert De Niro, Cathy Moriarty, Joe Pesci, Frank Vincent", 1980, 4));
-        actionMovies.add(new Movie("Gladiator", host + "action5", "Humphrey Bogart, Ingrid Bergman, Paul Henreid, Claude Rains", 1942, 5));
-        actionMovies.add(new Movie("Saving Private Ryan", host + "action6", "Jack Nicholson, Louise Fletcher, Michael Berryman, Peter Brocco", 1975, 6));
-        actionMovies.add(new Movie("Terminator 2 - Judgement Day", host + "action7", "Clark Gable, Vivien Leigh, Thomas Mitchell, Barbara O'Neil", 1939, 7));
-        actionMovies.add(new Movie("The Bourne Ultimatum", host + "action8", "Orson Welles, Joseph Cotten, Dorothy Comingore, Agnes Moorehead", 1941, 8));
-        actionMovies.add(new Movie("The Dark Knoght Rises",host + "action9", "Judy Garland, Frank Morgan, Ray Bolger, Bert Lahr", 1939, 9));
-        actionMovies.add(new Movie("The Matrix",host + "action10", "Peter O'Toole, Alec Guinness, Anthony Quinn, Jack Hawkins", 1962, 10));
+        actionMovies.add(new Movie("The Dark Knight", host + "action1.jpg", "Marlon Brando, Al Pacino, James Caan, Diane Keaton", 1972, 1));
+        actionMovies.add(new Movie("Heat",  host + "action2.jpg", "Tim Robbins, Morgan Freeman, Bob Gunton, William Sadler", 1994, 2));
+        actionMovies.add(new Movie("Inception", host + "action3.jpg", "Liam Neeson, Ralph Fiennes, Ben Kingsley, Caroline Goodall", 1993, 3));
+        actionMovies.add(new Movie("Kill Bill: Vol 1.", host + "action4.jpg", "Robert De Niro, Cathy Moriarty, Joe Pesci, Frank Vincent", 1980, 4));
+        actionMovies.add(new Movie("Gladiator", host + "action5.jpg", "Humphrey Bogart, Ingrid Bergman, Paul Henreid, Claude Rains", 1942, 5));
+        actionMovies.add(new Movie("Saving Private Ryan", host + "action6.jpg", "Jack Nicholson, Louise Fletcher, Michael Berryman, Peter Brocco", 1975, 6));
+        actionMovies.add(new Movie("Terminator 2 - Judgement Day", host + "action7.jpg", "Clark Gable, Vivien Leigh, Thomas Mitchell, Barbara O'Neil", 1939, 7));
+        actionMovies.add(new Movie("The Bourne Ultimatum", host + "action8.jpg", "Orson Welles, Joseph Cotten, Dorothy Comingore, Agnes Moorehead", 1941, 8));
+        actionMovies.add(new Movie("The Dark Knoght Rises",host + "action9.jpg", "Judy Garland, Frank Morgan, Ray Bolger, Bert Lahr", 1939, 9));
+        actionMovies.add(new Movie("The Matrix",host + "action10.jpg", "Peter O'Toole, Alec Guinness, Anthony Quinn, Jack Hawkins", 1962, 10));
 
     }
 }
