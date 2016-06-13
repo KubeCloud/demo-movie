@@ -1,5 +1,6 @@
 package com.rpicloud.controllers;
 
+import com.netflix.config.ConfigurationManager;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.rpicloud.IPreferenceService;
 import com.rpicloud.models.Movie;
@@ -29,7 +30,10 @@ public class MovieController {
     private ArrayList<Movie> kidsMovies = new ArrayList<Movie>();
 
     public MovieController() {
+
         populateMovies();
+        ConfigurationManager.getConfigInstance().setProperty("hystrix.command.moviesFallback.circuitBreaker.requestVolumeThreshold", 3);
+        ConfigurationManager.getConfigInstance().setProperty("hystrix.command.moviesFallback.metrics.rollingStats.timeInMilliseconds", 5000);
     }
 
 
